@@ -50,11 +50,16 @@ end
   delimiter //
   create procedure student_course()
   begin
-  declare num int;
-  set num=1;
-  while num <= 50 do
-  INSERT INTO  student_course(student_id, course_id) values(num,num%20+1);
-  set num=num+1;
+  declare i int;
+  declare k int;
+  set i=1;
+  while i <= 50 do
+  set k=1;
+  while k <= 5 do
+  INSERT INTO  student_course(student_id, course_id) values(i,(i+k-1)%20+1);
+  set k=k+1;
+  end while;
+  set i=i+1;
   end while;
   end
    //
