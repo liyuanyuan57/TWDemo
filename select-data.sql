@@ -1,2 +1,2 @@
-SELECT * FROM Students where id BETWEEN 20 AND 30;
-SELECT * FROM Course where id BETWEEN 10 AND 20;
+SELECT * FROM Students LIMIT 19,11;
+SELECT * FROM Course LIMIT 9,11;
