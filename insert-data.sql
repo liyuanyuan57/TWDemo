@@ -45,3 +45,18 @@ end
   //
 
   call students();//
+
+
+  delimiter //
+  create procedure student_course()
+  begin
+  declare num int;
+  set num=1;
+  while num <= 50 do
+  INSERT INTO  student_course(student_id, course_id) values(num,num%20+1);
+  set num=num+1;
+  end while;
+  end
+   //
+
+   call student_course();//
