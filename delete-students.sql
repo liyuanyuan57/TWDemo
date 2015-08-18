@@ -1,4 +1,1 @@
-ALTER TABLE Students DROP FOREIGN KEY fk_ClaStudents;
-ALTER TABLE student_course DROP FOREIGN KEY fk_UnitStuCou;
-
-DELETE FROM Students WHERE id BETWEEN 30 AND 50;
+DELETE expect FROM Students expect INNER JOIN (SELECT * FROM Students LIMIT 29,21) result on expect.id = result.id;

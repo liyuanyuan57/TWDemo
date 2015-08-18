@@ -8,10 +8,11 @@ while num <= 20 do
 INSERT INTO  Course(course_name) values(concat("course-", num));
 set num=num+1;
 end while;
-end
-//
+end //
 
- call course();//
+delimiter ;
+
+ call course();
 
  delimiter //
  create procedure class()
@@ -19,13 +20,12 @@ end
  declare num int;
  set num=1;
  while num <= 5 do
- INSERT INTO  Class(class_name) values(concat("class-", num));
+INSERT INTO  Class(class_name) values(concat("class-", num));
  set num=num+1;
  end while;
- end
-  //
-
-  call class();//
+ end //
+delimiter ;
+call class();
 
 
   delimiter //
@@ -43,8 +43,8 @@ end
   end while;
   end
   //
-
-  call students();//
+delimiter ;
+  call students();
 
 
   delimiter //
@@ -61,7 +61,6 @@ end
   end while;
   set i=i+1;
   end while;
-  end
-   //
-
-   call student_course();//
+  end //
+  delimiter ;
+   call student_course();

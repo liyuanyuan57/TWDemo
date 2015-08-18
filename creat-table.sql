@@ -1,4 +1,4 @@
-USE TWDemo//
+USE TWDemo;
 
 
 CREATE TABLE Course(
@@ -24,6 +24,9 @@ CREATE TABLE student_course(
   PRIMARY KEY(student_id, course_id)
   );
 
-ALTER TABLE Students ADD CONSTRAINT fk_ClaStudents FOREIGN KEY (class_id) REFERENCES Class(id);
-ALTER TABLE student_course ADD CONSTRAINT fk_UnitStuCou FOREIGN KEY (student_id) REFERENCES Students(id);
-ALTER TABLE student_course ADD CONSTRAINT fk_UnitCouStu FOREIGN KEY (course_id) REFERENCES Course(id);
+ALTER TABLE Students ADD CONSTRAINT fk_ClaStudents FOREIGN KEY (class_id) REFERENCES Class(id)
+ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE student_course ADD CONSTRAINT fk_UnitStuCou FOREIGN KEY (student_id) REFERENCES Students(id)
+ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE student_course ADD CONSTRAINT fk_UnitCouStu FOREIGN KEY (course_id) REFERENCES Course(id)
+ON DELETE CASCADE ON UPDATE CASCADE;
